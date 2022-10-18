@@ -57,7 +57,7 @@ aList.push(`String: "${sIn}" | A string contém "Lazy.": "${res}".`);
 
 dOps.fInsertDomItem(sTitle, aList);
 
-//--INDEXOF FUNCTION
+//---INDEXOF FUNCTION
 sTitle = "---INDEXOF FUNCTION";
 aList = [];
 
@@ -75,42 +75,69 @@ aList.push(`String: "${sIn}" | Procurando "Cat" retorna: "${res}".`);
 
 dOps.fInsertDomItem(sTitle, aList);
 
-// l.writeLog("h1", "### match ###");
-// sIn = "The quick brown fox jumps over the lazy dog. It barked. and Run."
-// const regex = /[A-Z]/g;
-// res = sIn.match(regex)
-// l.writeLog("p", `--> String: "${sIn}" | Match retorna valores que correspondem a regex configurada. nesse caso ${regex}: "${res}".`)
+//---MATCH FUNCTION
+sTitle = "---MATCH FUNCTION";
+aList = [];
 
-// l.writeLog("h1", "### padEnd and padStart ###");
-// sIn = "The dog barked."
-// res = sIn.padEnd(25, '!')
-// l.writeLog("p", `--> String: "${sIn}" | PadEnd - adiciona caracteres até toda string conter x caracteres: "${res}".`)
-// sIn = "The dog barked."
-// res = sIn.padStart(17, '>')
-// l.writeLog("p", `--> String: "${sIn}" | PadStart - adiciona caracteres até toda string conter x caracteres"${res}".`)
+sIn = "The quick brown fox jumps over the lazy dog. It barked. and Run.";
+const regex = /[A-Z]/g;
+res = sIn.match(regex);
+aList.push(
+  `--> String: "${sIn}" | Match retorna valores que correspondem a regex configurada. nesse caso ${regex}: "${res}".`
+);
+dOps.fInsertDomItem(sTitle, aList);
 
-// l.writeLog("H1", "### replace function ###")
-// const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
-// res = p.replace('dog', 'monkey');
-// l.writeLog("p", `Original: ${p}`);
-// l.writeLog("p", `Replaced FIRST 'dog': ${res}`);
-// const regex1 = /dog/gi;
-// res = p.replace(regex1, "ferret");
-// l.writeLog("p", `Repaced ALL 'dog' with regex (g param): ${res}`);
-// res = p.replaceAll('dog', 'cat');
-// l.writeLog("p", `Repaced ALL 'dog' with repalceAll(): ${res}`);
+//---PADEND AND PAD START FUNCTION
+sTitle = "---PADEND AND PAD START FUNCTION";
+aList = [];
 
-// l.writeLog("H1", "### slice function ###")
-// sIn = 'The quick brown fox jumps over the lazy dog.';
-// l.writeLog("p", `Slice and get string from positon 31 onward: ${sIn.slice(31)}`)
-// l.writeLog("p", `Slice and get specific middle caracters: ${sIn.slice(4, 19)}`)
-// l.writeLog("p", `Slice from the end: ${sIn.slice(-4)}`)
+sIn = "The dog barked.";
+res = sIn.padEnd(25, "!");
+aList.push(
+  `--> String: "${sIn}" | PadEnd - adiciona caracteres até toda string conter x caracteres: "${res}".`
+);
+sIn = "The dog barked.";
+res = sIn.padStart(17, ">");
+aList.push(
+  `--> String: "${sIn}" | PadStart - adiciona caracteres até toda string conter x caracteres"${res}".`
+);
+dOps.fInsertDomItem(sTitle, aList);
 
-// l.writeLog("H1", "### split function ###")
-// l.writeLog("p", `Split with space. Word in position 4: ${sIn.split(' ')[4]}`)
-// const aSplit = sIn.split('');
-// l.writeLog("p", `Split each letter to an array. Letter in position 4: ${aSplit[4]}`)
-// l.writeLog("p", `Full array printed: ${aSplit}`)
+//---REPLACE FUNCTION
+sTitle = "---REPLACE FUNCTION";
+aList = [];
+
+const p =
+  "The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?";
+res = p.replace("dog", "monkey");
+aList.push(`Original: ${p}`);
+aList.push(`Replaced FIRST 'dog': ${res}`);
+const regex1 = /dog/gi;
+res = p.replace(regex1, "ferret");
+aList.push(`Repaced ALL 'dog' with regex (g param): ${res}`);
+res = p.replaceAll("dog", "cat");
+aList.push(`Repaced ALL 'dog' with repalceAll(): ${res}`);
+dOps.fInsertDomItem(sTitle, aList);
+
+//---SLICE FUNCTION
+sTitle = "---SLICE FUNCTION";
+aList = [];
+
+sIn = "The quick brown fox jumps over the lazy dog.";
+aList.push(`Slice and get string from positon 31 onward: ${sIn.slice(31)}`);
+aList.push(`Slice and get specific middle caracters: ${sIn.slice(4, 19)}`);
+aList.push(`Slice from the end: ${sIn.slice(-4)}`);
+dOps.fInsertDomItem(sTitle, aList);
+
+//---SPLIT FUNCTION
+sTitle = "---SPLIT FUNCTION";
+aList = [];
+
+aList.push(`Split with space. Word in position 4: ${sIn.split(" ")[4]}`);
+const aSplit = sIn.split("");
+aList.push(`Split each letter to an array. Letter in position 4: ${aSplit[4]}`);
+aList.push(`Full array printed: ${aSplit}`);
+dOps.fInsertDomItem(sTitle, aList);
 
 //##########################################################################
 // update html

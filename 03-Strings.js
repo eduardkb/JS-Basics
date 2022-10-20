@@ -139,6 +139,36 @@ aList.push(`Split each letter to an array. Letter in position 4: ${aSplit[4]}`);
 aList.push(`Full array printed: ${aSplit}`);
 dOps.fInsertDomItem(sTitle, aList);
 
+//---INVERT STRING
+sTitle = "---INVERT STRING";
+aList = [];
+
+let sInput = "My name is Eduard.";
+sInput = sInput.toLowerCase();
+aList.push(`Original string: ${sInput}`);
+let sRes = "";
+for (let i = sInput.length - 1; i >= 0; i--) {
+  sRes += sInput[i];
+}
+aList.push(`Inverted string: ${sRes}`);
+
+dOps.fInsertDomItem(sTitle, aList);
+
+//---INVERT WORDS
+sTitle = "---INVERT WORDS";
+aList = [];
+
+sInput = "My name is Eduard.";
+aList.push(`Original string: ${sInput}`);
+let aWords = sInput.split(" ");
+sRes = "";
+aWords.forEach(function (item) {
+  sRes += item + " ";
+});
+sRes = sRes.trim();
+aList.push(`Inverted words: ${sRes}`);
+
+dOps.fInsertDomItem(sTitle, aList);
 //##########################################################################
 // update html
 dOps.fBuildSite();

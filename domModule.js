@@ -12,7 +12,9 @@ class domOperations {
   fInsertDomItem(sTitle, aLines) {
     // inserts each section to the array
     console.log(sTitle);
-    console.log(`\t${aLines}`);
+    aLines.forEach(function (item) {
+      console.log(`    ${item}`);
+    });
     this._domItems.push({ title: "h1", item: sTitle });
 
     for (let i = 0; i < aLines.length; i++) {

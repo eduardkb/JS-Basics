@@ -143,7 +143,7 @@ dOps.fInsertDomItem(sTitle, aList);
 sTitle = "---INVERT STRING";
 aList = [];
 
-let sInput = "My name is Eduard.";
+let sInput = "The quick brown fox jumps over the lazy dog";
 sInput = sInput.toLowerCase();
 aList.push(`Original string: ${sInput}`);
 let sRes = "";
@@ -158,13 +158,13 @@ dOps.fInsertDomItem(sTitle, aList);
 sTitle = "---INVERT WORDS";
 aList = [];
 
-sInput = "My name is Eduard.";
+sInput = "The quick brown fox jumps over the lazy dog";
 aList.push(`Original string: ${sInput}`);
 let aWords = sInput.split(" ");
 sRes = "";
-aWords.forEach(function (item) {
-  sRes += item + " ";
-});
+for (let i = aWords.length - 1; i >= 0; i--) {
+  sRes += aWords[i] + " ";
+}
 sRes = sRes.trim();
 aList.push(`Inverted words: ${sRes}`);
 

@@ -1,4 +1,4 @@
-import domOperations from "./domModule.js";
+import domOperations from "../modules/domModule.js";
 const dOps = new domOperations(document);
 
 //##########################################################################

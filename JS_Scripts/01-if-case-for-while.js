@@ -17,6 +17,18 @@ if (num === 1) {
 sRes.push(sText);
 dOps.fInsertDomItem(sTitle, sRes);
 
+//---IF OPERADOR TERNARIO (IF SIMPLIFICADO)
+sTitle = "-- IF OPERADOR TERNARIO (IF SIMPLIFICADO)";
+sText = [];
+
+sText.push(
+  `If no fomato:  "<condiçao> ? <resultado verdadeiro>: <resultado falso>"`
+);
+let iIdade = 18;
+sText.push(`Teste if simlificado: ${iIdade >= 18 ? "Maior" : "Menor"}`);
+
+dOps.fInsertDomItem(sTitle, sText);
+
 //---CASE---
 sTitle = "-- CASE";
 sText = "";

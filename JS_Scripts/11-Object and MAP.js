@@ -7,15 +7,59 @@ let sTitle = "---OBJECT";
 let sText = [];
 
 sText.push("Defining a Object.");
-let objTest = {
+let oPessoa = {
   name: "Eduard",
   age: 39,
   height: 1.83,
   isMale: true,
 };
-sText.push(`Print Object property name: ${objTest.name}`);
-sText.push(`Print Object property height: ${objTest.height}`);
-sText.push(`Print Object property isMale: ${objTest.isMale}`);
+//acess property with '.'
+sText.push(`Print Object property name: ${oPessoa.name}`);
+//acess property with '[]'
+sText.push(`Print Object property height: ${oPessoa["height"]}`);
+sText.push(`Print Object property isMale: ${oPessoa.isMale}`);
+dOps.fInsertDomItem(sTitle, sText);
+
+//---DESTRUCTURING OBJECTS
+sTitle = "---DESTRUCTURING OBJECTS";
+sText = [];
+//access object destructuring the object
+//(assigning property to a variable name)
+const { name, age, ...aRest } = oPessoa;
+sText.push(`Destructuring one object`);
+sText.push(
+  `>>> Accessing destrucutred object: Name: '${name}' | Age: '${age}'`
+);
+sText.push(`>>> Ret of the itmes on destructured array aRest: ${aRest.height}`);
+
+let aObjects = [
+  {
+    id: 1,
+    item: "Earbuds",
+    color: "blue",
+    price: 9.99,
+    inStock: true,
+  },
+  {
+    id: 2,
+    item: "Lantern",
+    color: "black",
+    price: 59.99,
+    inStock: false,
+  },
+  {
+    id: 3,
+    item: "Laptop",
+    color: "red",
+    price: 2980.8,
+    inStock: true,
+  },
+];
+sText.push(`Destructuring array of objects to print all items of a property`);
+let aItemsToSell = aObjects.map((aObjects) => aObjects.item);
+sText.push(`>>> Properties 'item': ${aItemsToSell}`);
+let aPrices = aObjects.map((aObjects) => aObjects.price);
+sText.push(`>>> Properties 'price': ${aPrices}`);
 
 dOps.fInsertDomItem(sTitle, sText);
 

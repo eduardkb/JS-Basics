@@ -49,6 +49,21 @@ for (let i = 0; i < 100; i++) {
 
 dOps.fInsertDomItem(sTitle, sText);
 
+//--- BETTER RANDOM FUNCTION
+sTitle = "---BETTER RANDOM FUNCTION";
+sText = [];
+
+sText.push(`Rand number betweem 1 and 10: ${getRandom(50, 1, 10)}`);
+function getRandom(iQuant, iMin, iMax) {
+  let aRand = new Array(iQuant).fill(1);
+  aRand = aRand.map(
+    (iNum) => Math.floor((Math.random() * 1000000) % (++iMax - iMin)) + iMin
+  );
+  return aRand;
+}
+
+dOps.fInsertDomItem(sTitle, sText);
+
 //##########################################################################
 // update html
 dOps.fBuildSite();

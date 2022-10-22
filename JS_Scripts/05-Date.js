@@ -114,6 +114,25 @@ dNow.setDate(dNow.getDate() - 5);
 sText.push(`5 days ago was: '${dNow}`);
 
 dOps.fInsertDomItem(sTitle, sText);
+
+//---GET FORMATTED DATE
+sTitle = "---GET FORMATTED DATE";
+sText = [];
+
+sText.push(`Getting formatted date: ${fgetFormatedDate()}`);
+function fgetFormatedDate() {
+  var m = new Date();
+  var dateString = "";
+  dateString += ("0" + m.getDate()).slice(-2) + "/";
+  dateString += ("0" + (m.getMonth() + 1)).slice(-2) + "/";
+  dateString += m.getFullYear() + " ";
+  dateString += ("0" + m.getHours()).slice(-2) + ":";
+  dateString += ("0" + m.getMinutes()).slice(-2) + ":";
+  dateString += ("0" + m.getSeconds()).slice(-2) + ":";
+  return dateString;
+}
+
+dOps.fInsertDomItem(sTitle, sText);
 //##########################################################################
 // update html
 dOps.fBuildSite();

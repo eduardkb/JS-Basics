@@ -65,16 +65,34 @@ sText.push(`1)___.at() Return item at index 2: ${aRes.at(2)}`);
 sText.push(
   `2)___.toSring to transform array in string: '${aRes.toString()}' typeof: ${typeof aRes.toString()}`
 );
-sText.push(`3)___.sort() Returns string sorted array: ${aRes.sort()}`);
 sText.push(`_____Current array: ${aRes}`);
-sText.push(`4)___.reverse() Returns reversed array: ${aRes.reverse()}`);
+sText.push(`3)___.reverse() Returns reversed array: ${aRes.reverse()}`);
 sText.push(`_____Current array: ${aRes}`);
 sText.push(
-  `5)___.slice(2, 4) Returns from position 2 to 4 of array: ${aRes.slice(2, 4)}`
+  `4)___.slice(2, 4) Returns from position 2 to 4 of array: ${aRes.slice(2, 4)}`
 );
 sText.push(`_____Current array: ${aRes}`);
-sText.push(`6)___.slice(-2) Returns 2 last items of array: ${aRes.slice(-2)}`);
+sText.push(`5)___.slice(-2) Returns 2 last items of array: ${aRes.slice(-2)}`);
 sText.push(`_____Current array: ${aRes}`);
+dOps.fInsertDomItem(sTitle, sText);
+
+//---SORT FUNCTION
+sTitle = "---SORT FUNCTION";
+sText = [];
+
+let aItems = [33, 5, 77, 9, 129, 20];
+sText.push(
+  `Sort function without parameters. (String sort ascending. Number 100 goes first)`
+);
+sText.push(`Original Array: ${aItems}`);
+sText.push(`Sorted Array (as string): ${aItems.sort()}`);
+sText.push(
+  `Ascending sorted Array (as number): ${aItems.sort((a, b) => a - b)}`
+);
+sText.push(
+  `Descending sorted Array (as number): ${aItems.sort((a, b) => b - a)}`
+);
+
 dOps.fInsertDomItem(sTitle, sText);
 
 //---FILTER, FIND, FINDLAST, FINDINDEX
@@ -110,6 +128,19 @@ sText.push(
 
 dOps.fInsertDomItem(sTitle, sText);
 
+//---SUM ARRAY WITH REDUCE FUNCTION
+sTitle = "---SUM ARRAY WITH REDUCE FUNCTION";
+sText = [];
+
+let aNum = [2, 3, 4, 5, 6];
+const iSum = aNum.reduce((valAnterio, valAtual) => valAnterio + valAtual);
+//same example but different:
+//const iSum = aNum.reduce((partialSum, a) => partialSum + a, 0);
+sText.push(`Sum array: ${aNum}`);
+sText.push(`Result of sum: ${iSum}`);
+
+dOps.fInsertDomItem(sTitle, sText);
+
 //---MAP FUNCTION
 sTitle = "---MAP FUNCTION";
 sText = [];
@@ -131,6 +162,18 @@ function myMapFunction(num) {
 
 dOps.fInsertDomItem(sTitle, sText);
 
+//---SPREAD OPERATOR (...)
+sTitle = "---SPREAD OPERATOR (...)";
+sText = [];
+
+let aTeste = ["Eduard", "Laysa", "Helena"];
+sText.push(
+  `Using spread operator to concatenate arrays: ${[...aTeste, "Helena"]}`
+);
+aTeste = [5, 8, 6, 3, 9];
+sText.push(`To use values in a function: ${Math.min(...aTeste)}`);
+
+dOps.fInsertDomItem(sTitle, sText);
 //##########################################################################
 // update html
 dOps.fBuildSite();
